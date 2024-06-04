@@ -5,16 +5,20 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        message = "" 
+        returned = ""
+        invested = ""
     elif request.method == 'POST':
-        returned = request.form.get('returned')
-        invested = request.form.get('invested')
-
-    ret = float(returned)
-    inv = float(invested)
-    gain = ret - inv
-    roi = (gain / inv) * 100
-    
+        try:
+            returned = float(request.form['returned'])
+            invested = float(request.form['invested'])
+            gain = returned - invested
+            roi = (gain / invested) * 100
+        except ValueError:
+            returned = ""
+            invested = ""
+            gain = ""
+            roi = ""
+            
     return render_template("index.html", gain=gain, roi=roi)
 
 
