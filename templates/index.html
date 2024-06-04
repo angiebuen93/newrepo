@@ -10,11 +10,15 @@
 <h1>Angelie Buen</h1>
 
 <form method="POST">
-    <input type="text" name="name" placeholder="Enter your name here">
+    <input type="text" name="returned" placeholder="Returned Amount">
+    <input type="text" name="invested" placeholder="Invested Amount">
     <button type="submit">Submit</button>
 </form>
+<br>
+<h3>Return of Investment</h3>
 
-<p>{{ message }}</p>
+<p>Gain: {{ gain }}</p>
+<p>ROI: {{ roi }}</p>
 </body>
 
 </html>
