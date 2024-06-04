@@ -4,6 +4,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    returned = 0
+    invested = 0
+    gain = 0
+    roi = 0
     if request.method == 'GET':
         returned = ""
         invested = ""
