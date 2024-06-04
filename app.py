@@ -17,6 +17,7 @@ def index():
             invested = float(request.form['invested'])
             gain = returned - invested
             roi = (gain / invested) * 100
+            roi = round(roi, 2)
         except ValueError:
             returned = ""
             invested = ""
