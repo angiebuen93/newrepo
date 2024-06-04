@@ -10,8 +10,10 @@ def index():
         returned = request.form['returned']
         invested = request.form['invested']
 
-    gain = float(returned) - float(invested)
-    roi = (gain / float(invested))
+    ret = str(returned)
+    inv = str(invested)
+    gain = float(ret) - float(inv)
+    roi = (gain / float(inv))
     return render_template("index.html", gain=gain, roi=roi)
 
 
