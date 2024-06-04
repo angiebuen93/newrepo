@@ -12,7 +12,7 @@ def index():
 
     gain = float(returned) - float(invested)
     roi = (gain / float(invested))
-    return render_template("index.html", message=message)
+    return render_template("index.html", gain=gain, roi=roi)
 
 
 if __name__ == '__main__':
