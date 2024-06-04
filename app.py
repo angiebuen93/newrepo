@@ -19,7 +19,7 @@ def index():
             gain = ""
             roi = ""
             
-    return render_template("index.html", gain=gain, roi=roi)
+    return render_template("index.html", returned=returned, invested=invested, gain=gain, roi=roi)
 
 
 if __name__ == '__main__':
