@@ -7,8 +7,11 @@ def index():
     if request.method == 'GET':
         message = "" 
     elif request.method == 'POST':
-        name = request.form['name']
-        message = f"Hello, {name}!"
+        returned = request.form['returned']
+        invested = request.form['invested']
+
+    gain = float(returned) - float(invested)
+    roi = (gain / float(invested))
     return render_template("index.html", message=message)
 
 
