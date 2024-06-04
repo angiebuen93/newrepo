@@ -2,9 +2,13 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    message = "Sample Text Passed"
+    if request.method == 'GET':
+        message = "" 
+    elif request.method == 'POST':
+        name = request.form['name']
+        message = f"Hello, {name}!"
     return render_template("index.html", message=message)
 
 
