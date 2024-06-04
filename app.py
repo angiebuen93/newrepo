@@ -7,8 +7,8 @@ def index():
     if request.method == 'GET':
         message = "" 
     elif request.method == 'POST':
-        returned = request.form['returned']
-        invested = request.form['invested']
+        returned = request.form.get['returned']
+        invested = request.form.get['invested']
 
     ret = float(returned)
     inv = float(invested)
